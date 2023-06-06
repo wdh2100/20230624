@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import Grid from '@mui/material/Unstable_Grid2';
+import {prefix} from "./TopHeaderImageBox";
 
 const Footer = () => {
     return (
@@ -23,7 +24,7 @@ const Footer = () => {
                         width={100}
                         height={100}
                         priority={false}
-                        src="/icon/naver_map.png"
+                        src={`${prefix}/icon/naver_map.png`}
                         alt={'naver'}/>
                 </Link>
             </Grid>
@@ -33,7 +34,7 @@ const Footer = () => {
                         width={100}
                         height={100}
                         priority={false}
-                        src="/icon/kakao_map.png"
+                        src={`${prefix}/icon/kakao_map.png`}
                         alt='kakao'/>
                 </Link>
             </Grid>

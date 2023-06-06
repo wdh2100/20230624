@@ -1,6 +1,7 @@
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Image from "next/image";
+import {prefix} from "./TopHeaderImageBox";
 
 export default function PhotoList() {
     return (
@@ -34,20 +35,20 @@ export default function PhotoList() {
 
 const itemData = [
     {
-        src: '/photo/medium/230526우윤슬-029.jpg',
+        src: `${prefix}/photo/medium/230526우윤슬-029.jpg`,
         title: '1',
         featured: true,
     },
     {
-        src: '/photo/medium/230526우윤슬-061.jpg',
+        src: '${prefix}/photo/medium/230526우윤슬-061.jpg',
         title: '2',
     },
     {
-        src: '/photo/medium/230526우윤슬-071.jpg',
+        src: '${prefix}/photo/medium/230526우윤슬-071.jpg',
         title: '3',
     },
     {
-        src: '/photo/medium/230526우윤슬-040.jpg',
+        src: '${prefix}/photo/medium/230526우윤슬-040.jpg',
         title: '4',
         featured: true,
     },

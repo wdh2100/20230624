@@ -6,13 +6,15 @@ import Link from "next/link";
 import React, {useEffect} from "react";
 import {useRouter} from 'next/navigation';
 import TypeIt from "typeit-react";
+import {prefix} from "../../container/card/TopHeaderImageBox";
+
 
 export default function Door() {
     const router = useRouter();
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            router.push('/card');
+            router.push(`${prefix}/card`);
         }, 10000)
         return () => {
             clearTimeout(timeoutId);
@@ -36,8 +38,8 @@ export default function Door() {
                     첫생일에 초대합니다🎉
                 </TypeIt>
             </div>
-            <Link href={'/card'}>
-                <Image src={'/photo/medium/230526우윤슬-061.jpg'} fill alt={'door'} quality={75} priority
+            <Link href={`${prefix}/card`}>
+                <Image src={`${prefix}/photo/medium/230526우윤슬-061.jpg`} fill alt={'door'} quality={75} priority
                        style={{maxWidth: '460px', margin: '0 auto'}}/>
             </Link>
         </main>
