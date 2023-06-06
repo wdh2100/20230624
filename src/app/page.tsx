@@ -37,7 +37,7 @@ export default function Door() {
                 </TypeIt>
             </div>
             <Link href={'/card'}>
-                <Image src={'/photo/230526우윤슬-062.jpg'} fill alt={'door'} quality={75}
+                <Image src={'/photo/medium/230526우윤슬-061.jpg'} fill alt={'door'} quality={75} priority
                        style={{maxWidth: '460px', margin: '0 auto'}}/>
             </Link>
         </main>

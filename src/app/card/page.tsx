@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import TopHeaderImageBox from "../../../container/card/TopHeaderImageBox";
 import PhotoList from "../../../container/card/PhotoList";
 import NaverMap from "../../../container/card/NaverMap";
+import Footer from "../../../container/card/Footer";
 
 const TestItem = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -30,7 +31,7 @@ const Page = () => {
                         <TestItem>6월 24일 윤슬 돌잔치 초대합니다!</TestItem>
                         <PhotoList/>
                         <NaverMap/>
-                        <TestItem>Footer</TestItem>
+                        <Footer/>
                     </Stack>
                 </Container>
             </main>
