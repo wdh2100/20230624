@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: '우윤슬 돌잔치',
         description: '23년 6월 24일 12시',
         images: {
-            url: 'https://github.com/wdh2100/20230624/blob/main/public/photo/small/230526%EC%9A%B0%EC%9C%A4%EC%8A%AC-320.jpg',
+            url: `https://wdh2100.github.io/20230624/photo/small/230526우윤슬-029.jpg`,
             width: 720,
             height: 480,
         },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     icons: {
-        icon: `https://github.com/wdh2100/20230624/blob/main/src/app/favicon.ico`,
+        icon: `https://wdh2100.github.io/20230624/icon/favicon.ico`,
     },
 }
 
