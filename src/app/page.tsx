@@ -14,7 +14,7 @@ export default function Door() {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            router.push(`${prefix}/card`);
+            router.push(`${prefix}card`);
         }, 10000)
         return () => {
             clearTimeout(timeoutId);
@@ -38,7 +38,7 @@ export default function Door() {
                     첫생일에 초대합니다🎉
                 </TypeIt>
             </div>
-            <Link href={`${prefix}/card`}>
+            <Link href={`${prefix}card`}>
                 <Image src={`${prefix}/photo/medium/230526우윤슬-061.jpg`} fill alt={'door'} quality={75} priority
                        style={{maxWidth: '460px', margin: '0 auto'}}/>
             </Link>
