@@ -41,7 +41,7 @@ export default function RootLayout({
             <meta name="description" content="23년 6월 24일 12시"/>
             <meta property="og:title" content="우윤슬 돌잔치"/>
             <meta property="og:description" content="23년 6월 24일 12시"/>
-            <meta property="og:url" content="https://github.com/wdh2100/20230624"/>
+            <meta property="og:url" content="https://wdh2100.github.io/20230624"/>
             <meta property="og:type" content="website"/>
             <meta property="og:image" content="https://wdh2100.github.io/20230624/photo/small/230526우윤슬-029.jpg"/>
             <meta property="og:image:width" content="720"/>
