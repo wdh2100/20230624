@@ -2,6 +2,7 @@ import './globals.css'
 import {Inter} from 'next/font/google'
 import {Metadata} from 'next';
 import React from "react";
+import Script from "next/script";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
         url: 'https://github.com/wdh2100/20230624',
         type: 'website',
     },
-    icons: {
-        icon: `https://wdh2100.github.io/20230624/icon/favicon.ico`,
-    },
+    icons: `https://wdh2100.github.io/20230624/icon/favicon.ico`,
 }
+
+const CLIENT_ID = 'lhwi4yf1te'
 
 export default function RootLayout({
                                        children,
@@ -31,7 +32,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="kr">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>{children}
+        <Script
+            strategy='beforeInteractive'
+            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${CLIENT_ID}`}/>
+        </body>
         </html>
     )
 }
