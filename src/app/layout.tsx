@@ -18,7 +18,7 @@ export const metadata: Metadata = {
             width: 720,
             height: 480,
         },
-        url: 'https://github.com/wdh2100/20230624',
+        url: 'https://wdh2100.github.io/20230624',
         type: 'website',
     },
     icons: {
