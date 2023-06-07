@@ -40,15 +40,15 @@ const itemData = [
         featured: true,
     },
     {
-        src: '${prefix}/photo/medium/230526우윤슬-061.jpg',
+        src: `${prefix}/photo/medium/230526우윤슬-061.jpg`,
         title: '2',
     },
     {
-        src: '${prefix}/photo/medium/230526우윤슬-071.jpg',
+        src: `${prefix}/photo/medium/230526우윤슬-071.jpg`,
         title: '3',
     },
     {
-        src: '${prefix}/photo/medium/230526우윤슬-040.jpg',
+        src: `${prefix}/photo/medium/230526우윤슬-040.jpg`,
         title: '4',
         featured: true,
     },
