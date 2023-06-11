@@ -1,35 +1,51 @@
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 import Image from "next/image";
 import {prefix} from "./TopHeaderImageBox";
+import Flicking, {MoveEvent, ViewportSlot, WillChangeEvent} from "@egjs/react-flicking";
+import {AutoPlay, Pagination} from "@egjs/flicking-plugins";
+import "@egjs/react-flicking/dist/flicking.css";
+import "@egjs/flicking-plugins/dist/pagination.css";
 
 export default function PhotoList() {
-    return (
-        <ImageList
-            sx={{
-                height: 500,
-                transform: 'translateZ(0)',
-            }}
-            rowHeight={200}
-            gap={3}
-        >
-            {itemData.map((item) => {
-                const cols = item.featured ? 2 : 1;
-                const rows = item.featured ? 2 : 1;
+    const plugins = [new AutoPlay({
+        duration: 2000,
+        direction: "NEXT",
+        stopOnHover: true
+    }), new Pagination({type: 'scroll'})];
 
-                return (
-                    <ImageListItem key={item.src} cols={cols} rows={rows}>
-                        <Image
-                            src={item.src}
-                            fill
-                            alt={item.title}
-                            priority={false}
-                            quality={100}
-                        />
-                    </ImageListItem>
-                );
-            })}
-        </ImageList>
+    return (
+        <div style={{width: '100%', overflow: 'hidden'}}>
+            <Flicking
+                viewportTag="div"
+                align="center"
+                onMove={(e: MoveEvent) => {
+                }}
+                onWillChange={(e: WillChangeEvent) => {
+                }}
+                horizontal={true}
+                circular={true}
+                plugins={plugins}
+            >
+                {itemData.map((item) => {
+                    return (
+                        <div className="panel" key={item.src}>
+                            <Image
+                                src={item.src}
+                                key={item.src}
+                                alt={item.title}
+                                priority={false}
+                                width={370}
+                                height={250}
+                                quality={100}
+                            />
+                        </div>
+                    );
+                })}
+                <ViewportSlot>
+                    <div className="flicking-pagination"></div>
+                </ViewportSlot>
+            </Flicking>
+        </div>
+
     );
 }
 

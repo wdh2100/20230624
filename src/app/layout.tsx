@@ -1,11 +1,15 @@
 import './globals.css'
-import {Inter} from 'next/font/google'
 import {Metadata} from 'next';
 import React from "react";
 import Script from "next/script";
 import Head from "next/head"
+import localFont from 'next/font/local'
 
-const inter = Inter({subsets: ['latin']})
+const amsterdamFont = localFont({
+    src: [{
+        path: 'https://wdh2100.github.io/20230624/public/font/Amsterdam.woff2'
+    }]
+})
 
 export const metadata: Metadata = {
     title: '우윤슬 돌잔치',
@@ -34,7 +38,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="kr">
+        <html lang="kr" className={amsterdamFont.className}>
         <Head>
             <title>우윤슬 돌잔치</title>
             <meta name="title" content="우윤슬 돌잔치"/>
@@ -47,7 +51,7 @@ export default function RootLayout({
             <meta property="og:image:width" content="720"/>
             <meta property="og:image:height" content="480"/>
         </Head>
-        <body className={inter.className}>
+        <body>
         <link rel="icon" href="https://wdh2100.github.io/20230624/icon/favicon.ico" type="image/x-icon"
               sizes="any"/>
         {children}

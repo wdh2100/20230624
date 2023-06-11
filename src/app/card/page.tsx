@@ -28,7 +28,9 @@ const Page = () => {
                 <Container maxWidth="sm">
                     <Stack spacing={2}>
                         <TopHeaderImageBox/>
-                        <TestItem>6월 24일 윤슬 돌잔치 초대합니다!</TestItem>
+                        <TestItem>아빠 우도형 | 엄마 윤이경</TestItem>
+                        <TestItem>2023년 6월 24일 토요일 오후 12시</TestItem>
+                        <TestItem>송담고택</TestItem>
                         <PhotoList/>
                         <NaverMap/>
                         <Footer/>

@@ -15,32 +15,32 @@ export default function Door() {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             router.push(`${prefix}card`);
-        }, 10000)
+        }, 4000)
         return () => {
             clearTimeout(timeoutId);
         }
     })
     return (
         <main className={styles.main}>
-            <div style={{zIndex: 100, color: 'black', width: '100%', textAlign: 'center'}}>
+            <div style={{zIndex: 100, color: 'black', width: '100%', textAlign: 'center', marginTop: '25px'}}>
                 <TypeIt
-                    as='h1'
+                    as='h3'
                     options={{
-                        speed: 150,
-                        loop: true,
-                        loopDelay: 5000
+                        speed: 90,
                     }}>
-                    <br/>
                     안녕하세요?
                     <br/>
                     저는 우윤슬👶입니다
                     <br/>
-                    첫생일에 초대합니다🎉
+                    저의 첫 생일
+                    <br/>
+                    잔치에 초대합니다🎉
                 </TypeIt>
             </div>
             <Link href={`${prefix}card`}>
-                <Image src={`${prefix}/photo/medium/230526우윤슬-061.jpg`} fill alt={'door'} quality={75} priority
-                       style={{maxWidth: '460px', margin: '0 auto'}}/>
+                <Image src={`${prefix}/photo/medium/230526우윤슬-320.jpg`} fill alt={'door'}
+                       quality={75} priority
+                       style={{maxWidth: '460px', margin: '0 auto', paddingTop: '150px'}}/>
             </Link>
         </main>
     )
