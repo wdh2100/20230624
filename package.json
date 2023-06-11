@@ -13,6 +13,7 @@
     "@egjs/react-flicking": "^4.10.9",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
     "@next/font": "^13.4.5",
     "@types/navermaps": "^3.6.5",

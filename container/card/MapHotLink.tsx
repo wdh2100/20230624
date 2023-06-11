@@ -5,9 +5,9 @@ import {prefix} from "./TopHeaderImageBox";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-const Footer = () => {
+const MapHotLink = () => {
     return (
-        <ButtonGroup variant="contained" style={{margin: '0 0'}}>
+        <ButtonGroup variant="text" style={{margin: '0 0', paddingBottom: '70px', justifyContent: 'space-between'}}>
             <Link href={'https://surl.tmobiapi.com/f0303f11'}>
                 <Button startIcon={<Image
                     width={30}
@@ -42,4 +42,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default MapHotLink;

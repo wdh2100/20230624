@@ -8,7 +8,8 @@ import {Container, Stack, ThemeProvider} from "@mui/system";
 import TopHeaderImageBox from "../../../container/card/TopHeaderImageBox";
 import PhotoList from "../../../container/card/PhotoList";
 import NaverMap from "../../../container/card/NaverMap";
-import Footer from "../../../container/card/Footer";
+import MapHotLink from "../../../container/card/MapHotLink";
+import Navigation from "../../../container/card/Navigation";
 
 const Page = () => {
     return (
@@ -25,7 +26,8 @@ const Page = () => {
                         <h2 style={{textAlign: "center"}}>송담고택</h2>
                         <PhotoList/>
                         <NaverMap/>
-                        <Footer/>
+                        <MapHotLink/>
+                        <Navigation/>
                     </Stack>
                 </Container>
             </main>

@@ -13,7 +13,7 @@ export default function PhotoList() {
     }), new Pagination({type: 'scroll'})];
 
     return (
-        <div style={{width: '100%', overflow: 'hidden'}}>
+        <div id='photo' style={{width: '100%', overflow: 'hidden'}}>
             <Flicking
                 viewportTag="div"
                 align="center"
