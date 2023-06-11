@@ -7,7 +7,7 @@ import localFont from 'next/font/local'
 
 const amsterdamFont = localFont({
     src: [{
-        path: 'https://wdh2100.github.io/20230624/public/font/Amsterdam.woff2'
+        path: '../../public/font/Amsterdam.woff2'
     }]
 })
 
