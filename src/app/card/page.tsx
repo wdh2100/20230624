@@ -11,13 +11,20 @@ import NaverMap from "../../../container/card/NaverMap";
 import MapHotLink from "../../../container/card/MapHotLink";
 import Navigation from "../../../container/card/Navigation";
 import MainMessage from "../../../container/card/MainMessage";
+import localFont from "next/font/local";
+
+const amsterdamFont = localFont({
+    src: [{
+        path: '../../../public/font/Amsterdam.woff2'
+    }]
+})
 
 const Page = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <main className={styles.main}>
-                <Container maxWidth="sm">
+                <Container maxWidth="sm" className={amsterdamFont.className}>
                     <Stack spacing={2}>
                         <TopHeaderImageBox/>
                         <MainMessage/>
