@@ -5,6 +5,7 @@ import Slide from '@mui/material/Slide';
 import {TransitionProps} from '@mui/material/transitions';
 import Image from "next/image";
 import {useUrlHashState} from "../../hooks/useUrlHashState";
+import {useRouter} from 'next/navigation'
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -16,6 +17,7 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function FullScreenDialog({src, callbackClose}: { src: string, callbackClose: any }) {
+    const router = useRouter();
     const [open] = useUrlHashState('#image');
 
     useEffect(() => {
@@ -25,7 +27,7 @@ export default function FullScreenDialog({src, callbackClose}: { src: string, ca
     }, [open, callbackClose]);
 
     const handleClose = () => {
-        window.history.back();
+        router.back();
         callbackClose(false);
     }
 
