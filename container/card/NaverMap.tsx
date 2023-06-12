@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from "@/app/page.module.css";
+import CopyToClipboardButton from "./CopyToClipboardButton";
 
 const NaverMap = () => {
     useEffect(() => {
@@ -23,7 +24,7 @@ const NaverMap = () => {
         const contentString = [
             '<div style="color: black">',
             '   <h3>송담고택</h3>',
-            '   <p>경기 용인시 처인구 이동읍 어진로 780<br />',
+            '   <h4>경기 용인시 처인구 이동읍 어진로 780</h4>',
             '</div>'
         ].join('');
 
@@ -35,8 +36,9 @@ const NaverMap = () => {
 
     return (
         <div style={{paddingTop: '1rem'}}>
-            <h1>송담고택</h1>
-            <div>경기 용인시 처인구 이동읍 어진로 780</div>
+            <h1>🏠송담고택</h1>
+            <h3 style={{display: 'inline-block'}}>경기 용인시 처인구 이동읍 어진로 780</h3>
+            <CopyToClipboardButton/>
             <div className={styles.center} id="map" style={{width: '100%', height: '250px'}}></div>
         </div>
     );
