@@ -9,8 +9,11 @@ const MainMessage = () => {
             </h3>
             <h2 style={{textAlign: "center"}}>
                 2023년 6월 24일 토요일 오후 12시<br/>송담고택</h2>
+            <div></div>
+            <div></div>
+            <div></div>
             <TypeIt
-                as={'h5'}
+                as={'h4'}
                 options={{
                     speed: 150,
                 }}>
