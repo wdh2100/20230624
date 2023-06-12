@@ -8,7 +8,12 @@ import {Dispatch, SetStateAction, useEffect, useState} from 'react';
 export function useUrlHashState(
     hash: string
 ): [state: boolean, setState: Dispatch<SetStateAction<boolean>>] {
-    const [state, setState] = useState<boolean>(window.location.hash === hash);
+    const [isMounted, setMounted] = useState(false);
+    const [state, setState] = useState<boolean>(isMounted && window.location.hash === hash);
+
+    useEffect(() => {
+        setMounted(true);
+    }, [isMounted]);
 
     useEffect(() => {
         const onHashChange = () => setState(window.location.hash === hash);
