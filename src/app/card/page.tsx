@@ -23,7 +23,7 @@ const Page = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <main className={styles.main}>
+            <main className={styles.main} style={{background: '#efe9d9'}}>
                 <Container maxWidth="sm" className={amsterdamFont.className}>
                     <Stack spacing={2}>
                         <TopHeaderImageBox/>
