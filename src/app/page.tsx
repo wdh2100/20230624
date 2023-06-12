@@ -14,7 +14,7 @@ export default function Door() {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            router.push(`${prefix}card`);
+            router.replace(`${prefix}card`);
         }, 5000)
         return () => {
             clearTimeout(timeoutId);
