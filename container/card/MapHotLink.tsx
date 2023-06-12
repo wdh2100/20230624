@@ -7,7 +7,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 
 const MapHotLink = () => {
     return (
-        <ButtonGroup variant="outlined" style={{margin: '0 0', paddingBottom: '30px', justifyContent: 'space-between'}}>
+        <ButtonGroup variant="outlined" style={{margin: '0 0', paddingBottom: '70px', justifyContent: 'space-between'}}>
             <Link href={'https://surl.tmobiapi.com/f0303f11'}>
                 <Button startIcon={<Image
                     width={30}
