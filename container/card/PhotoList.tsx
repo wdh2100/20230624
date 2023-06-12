@@ -41,6 +41,7 @@ export default function PhotoList() {
                                                setDefaultIndex(index);
                                                setBigSizeImageSrc(item.src)
                                                setOpen(true);
+                                               window.location.hash = "#image";
                                            }}
                                            quality={100}/>
                                 </div>
@@ -52,7 +53,7 @@ export default function PhotoList() {
                     </Flicking>
                 }
             </div>
-            <FullScreenDialog open={open} src={bigSizeImageSrc} handleClose={setOpen}/>
+            <FullScreenDialog src={bigSizeImageSrc} callbackClose={setOpen}/>
         </>
     );
 }
