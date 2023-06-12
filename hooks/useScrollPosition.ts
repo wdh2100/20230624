@@ -34,13 +34,3 @@ export function useScrollPosition(): ScrollPosition {
 
     return position;
 }
-
-export function useScrollXPosition(): number {
-    const {x} = useScrollPosition();
-    return x;
-}
-
-export function useScrollYPosition(): number {
-    const {y} = useScrollPosition();
-    return y;
-}
