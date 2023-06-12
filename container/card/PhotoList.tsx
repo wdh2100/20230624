@@ -4,9 +4,14 @@ import Flicking, {ViewportSlot} from "@egjs/react-flicking";
 import {AutoPlay, Pagination} from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
-import React from "react";
+import React, {useState} from "react";
+import FullScreenDialog from "./FullScreenDialog";
 
 export default function PhotoList() {
+    const [open, setOpen] = useState(false);
+    const [bigSizeImageSrc, setBigSizeImageSrc] = useState('');
+    const [defaultIndex, setDefaultIndex] = useState(0);
+
     const plugins = [new AutoPlay({
         duration: 2000,
         direction: "NEXT",
@@ -14,29 +19,41 @@ export default function PhotoList() {
     }), new Pagination({type: 'fraction'})];
 
     return (
-        <div id='photo' style={{width: '100%', overflow: 'hidden'}}>
-            <Flicking
-                align={'center'}
-                autoResize
-                circular={true}
-                plugins={plugins}
-            >
-                {itemData.map((item) => {
-                    return (
-                        <div key={item.src} className="panel"
-                             style={{width: '100%', height: '500px', position: 'relative'}}>
-                            <Image src={item.src} fill priority
-                                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt={'image'}
-                                   quality={100}/>
-                        </div>
-                    );
-                })}
-                <ViewportSlot>
-                    <div className="flicking-pagination"></div>
-                </ViewportSlot>
-            </Flicking>
-        </div>
+        <>
 
+            <div id='photo' style={{width: '100%', overflow: 'hidden'}}>
+                {!open &&
+                    <Flicking
+                        align={'center'}
+                        autoResize
+                        circular={true}
+                        plugins={plugins}
+                        defaultIndex={defaultIndex}
+                    >
+                        {itemData.map((item, index) => {
+                            return (
+                                <div key={item.src} className="panel"
+                                     style={{width: '100%', height: '500px', position: 'relative'}}>
+                                    <Image src={item.src} fill priority
+                                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                           alt={'image'}
+                                           onClick={() => {
+                                               setDefaultIndex(index);
+                                               setBigSizeImageSrc(item.src)
+                                               setOpen(true);
+                                           }}
+                                           quality={100}/>
+                                </div>
+                            );
+                        })}
+                        <ViewportSlot>
+                            <div className="flicking-pagination"></div>
+                        </ViewportSlot>
+                    </Flicking>
+                }
+            </div>
+            <FullScreenDialog open={open} src={bigSizeImageSrc} handleClose={setOpen}/>
+        </>
     );
 }
 
