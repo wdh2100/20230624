@@ -1,42 +1,33 @@
 import Image from "next/image";
 import {prefix} from "./TopHeaderImageBox";
-import Flicking, {MoveEvent, ViewportSlot, WillChangeEvent} from "@egjs/react-flicking";
+import Flicking, {ViewportSlot} from "@egjs/react-flicking";
 import {AutoPlay, Pagination} from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
+import React from "react";
 
 export default function PhotoList() {
     const plugins = [new AutoPlay({
         duration: 2000,
         direction: "NEXT",
         stopOnHover: true
-    }), new Pagination({type: 'scroll'})];
+    }), new Pagination({type: 'fraction'})];
 
     return (
         <div id='photo' style={{width: '100%', overflow: 'hidden'}}>
             <Flicking
-                viewportTag="div"
-                align="center"
-                onMove={(e: MoveEvent) => {
-                }}
-                onWillChange={(e: WillChangeEvent) => {
-                }}
-                horizontal={true}
+                align={'center'}
+                autoResize
                 circular={true}
                 plugins={plugins}
             >
                 {itemData.map((item) => {
                     return (
-                        <div className="panel" key={item.src}>
-                            <Image
-                                src={item.src}
-                                key={item.src}
-                                alt={item.title}
-                                priority={false}
-                                width={370}
-                                height={250}
-                                quality={100}
-                            />
+                        <div key={item.src} className="panel"
+                             style={{width: '100%', height: '500px', position: 'relative'}}>
+                            <Image src={item.src} fill priority
+                                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt={'image'}
+                                   quality={100}/>
                         </div>
                     );
                 })}
@@ -49,23 +40,76 @@ export default function PhotoList() {
     );
 }
 
+const getImagePath = (photoIndex: string) => {
+    return `${prefix}/photo/medium/230526우윤슬-${photoIndex.padStart(3, '0')}.jpg`
+}
+
 const itemData = [
     {
-        src: `${prefix}/photo/medium/230526우윤슬-029.jpg`,
-        title: '1',
+        src: getImagePath('29'),
+    },
+    {
+        src: getImagePath('40'),
         featured: true,
     },
     {
-        src: `${prefix}/photo/medium/230526우윤슬-061.jpg`,
-        title: '2',
+        src: getImagePath('61'),
     },
     {
-        src: `${prefix}/photo/medium/230526우윤슬-071.jpg`,
-        title: '3',
+        src: getImagePath('71'),
     },
     {
-        src: `${prefix}/photo/medium/230526우윤슬-040.jpg`,
-        title: '4',
-        featured: true,
+        src: getImagePath('82'),
+    },
+    {
+        src: getImagePath('85'),
+    },
+    {
+        src: getImagePath('91'),
+    },
+    {
+        src: getImagePath('94'),
+    },
+    {
+        src: getImagePath('95'),
+    },
+    {
+        src: getImagePath('103'),
+    },
+    {
+        src: getImagePath('110'),
+    },
+    {
+        src: getImagePath('120'),
+    },
+    {
+        src: getImagePath('177'),
+    },
+    {
+        src: getImagePath('179'),
+    },
+    {
+        src: getImagePath('181'),
+    },
+    {
+        src: getImagePath('186'),
+    },
+    {
+        src: getImagePath('205'),
+    },
+    {
+        src: getImagePath('247'),
+    },
+    {
+        src: getImagePath('257'),
+    },
+    {
+        src: getImagePath('305'),
+    },
+    {
+        src: getImagePath('320'),
+    },
+    {
+        src: getImagePath('321'),
     },
 ];
