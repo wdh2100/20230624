@@ -3,11 +3,11 @@ import {useEffect, useState} from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
-import ArchiveIcon from '@mui/icons-material/Archive';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Paper from '@mui/material/Paper';
 import {useScrollPosition} from "../../hooks/useScrollPosition";
 import {Slide} from "@mui/material";
+import ImageIcon from '@mui/icons-material/Image';
 
 const Navigation = () => {
     const [value, setValue] = useState(0);
@@ -42,10 +42,10 @@ const Navigation = () => {
                         setValue(newValue);
                     }}
                 >
-                    <BottomNavigationAction label="Main" icon={<VerticalAlignTopIcon/>} onClick={() => {
+                    <BottomNavigationAction icon={<VerticalAlignTopIcon/>} onClick={() => {
                         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
                     }}/>
-                    <BottomNavigationAction label="Photo" icon={<ArchiveIcon/>} onClick={() => {
+                    <BottomNavigationAction label="Photo" icon={<ImageIcon/>} onClick={() => {
                         const top = Number(document?.getElementById('photo')?.offsetTop) ?? 0;
                         console.log(top);
                         window.scrollTo({top, left: 0, behavior: 'smooth'})
