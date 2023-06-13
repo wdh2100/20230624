@@ -57,6 +57,7 @@ export default function Door() {
                         >
                             <Image src={`${prefix}/photo/medium/230526우윤슬-320.jpg`} fill priority
                                    alt={'main'}
+                                   style={{objectFit: 'contain'}}
                                    quality={100}/>
 
                         </div>
