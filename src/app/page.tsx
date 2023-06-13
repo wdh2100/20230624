@@ -32,7 +32,7 @@ export default function Door() {
                     marginTop: '25px'
                 }}>
                     <TypeIt
-                        as='h3'
+                        as='h2'
                         options={{
                             speed: 90,
                         }}>
@@ -40,9 +40,7 @@ export default function Door() {
                         <br/>
                         저는 우윤슬👶입니다
                         <br/>
-                        저의 첫 생일
-                        <br/>
-                        잔치에 초대합니다🎉
+                        저의 첫 생일 잔치에 초대합니다🎉
                     </TypeIt>
                 </div>
 
@@ -57,7 +55,6 @@ export default function Door() {
                             height: '70vh'
                         }}
                         >
-
                             <Image src={`${prefix}/photo/medium/230526우윤슬-320.jpg`} fill priority
                                    alt={'main'}
                                    quality={100}/>
