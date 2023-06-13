@@ -24,7 +24,7 @@ const Page = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <main className={styles.main} style={{background: '#efe9d9'}}>
-                <Container maxWidth="sm" className={amsterdamFont.className}>
+                <Container maxWidth="md" className={amsterdamFont.className}>
                     <Stack spacing={2}>
                         <TopHeaderImageBox/>
                         <MainMessage/>
