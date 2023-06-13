@@ -4,6 +4,7 @@ import Flicking, {ViewportSlot} from "@egjs/react-flicking";
 import {AutoPlay, Pagination} from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
+import "@egjs/flicking-plugins/dist/flicking-plugins.css";
 import React, {useState} from "react";
 import FullScreenDialog from "./FullScreenDialog";
 
