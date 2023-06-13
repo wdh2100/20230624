@@ -34,8 +34,8 @@ export default function PhotoList() {
 
     return (
         <>
-
-            <div id='photo' style={{width: '100%', overflow: 'hidden'}}>
+            <h1 id='photo'>🖼️갤러리</h1>
+            <div style={{width: '100%', overflow: 'hidden'}}>
                 {!open &&
                     <Flicking
                         align={'center'}
