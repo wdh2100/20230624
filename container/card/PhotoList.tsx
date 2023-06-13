@@ -34,7 +34,11 @@ export default function PhotoList() {
 
     return (
         <>
-            <h1 id='photo'>🖼️갤러리</h1>
+            <div>
+                <h1 id='photo' style={{display: 'inline-block'}}>🖼️갤러리</h1>
+                <p style={{display: 'inline-block', margin: '0 1rem'}}>누르면 확대됩니다.</p>
+            </div>
+
             <div style={{width: '100%', overflow: 'hidden'}}>
                 {!open &&
                     <Flicking
