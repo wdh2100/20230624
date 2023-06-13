@@ -7,6 +7,20 @@ import "@egjs/flicking-plugins/dist/pagination.css";
 import React, {useState} from "react";
 import FullScreenDialog from "./FullScreenDialog";
 
+const imageFiles = ['29', '40', '61', '71', '82', '85', '91', '94', '95', '103', '110', '120', '177', '179', '181', '186', '205', '247', '257', '305', '320', '321'];
+
+const getImagePath = (photoIndex: string) => {
+    return `${prefix}/photo/medium/230526우윤슬-${photoIndex.padStart(3, '0')}.jpg`
+}
+
+
+const imageList = imageFiles.map(item => {
+    return {
+        src: getImagePath(item)
+    };
+});
+
+
 export default function PhotoList() {
     const [open, setOpen] = useState(false);
     const [bigSizeImageSrc, setBigSizeImageSrc] = useState('');
@@ -30,7 +44,7 @@ export default function PhotoList() {
                         plugins={plugins}
                         defaultIndex={defaultIndex}
                     >
-                        {itemData.map((item, index) => {
+                        {imageList.map((item, index) => {
                             return (
                                 <div key={item.src} className="panel"
                                      style={{width: '100%', height: '500px', position: 'relative'}}>
@@ -43,6 +57,7 @@ export default function PhotoList() {
                                                setOpen(true);
                                                window.location.hash = "#image";
                                            }}
+                                           style={{objectFit: 'contain'}}
                                            quality={100}/>
                                 </div>
                             );
@@ -52,82 +67,10 @@ export default function PhotoList() {
                         </ViewportSlot>
                     </Flicking>
                 }
+                {open && <div className="panel" style={{width: '100%', height: '500px', position: 'relative'}}/>}
             </div>
             <FullScreenDialog src={bigSizeImageSrc} callbackClose={setOpen}/>
         </>
     );
 }
 
-const getImagePath = (photoIndex: string) => {
-    return `${prefix}/photo/medium/230526우윤슬-${photoIndex.padStart(3, '0')}.jpg`
-}
-
-const itemData = [
-    {
-        src: getImagePath('29'),
-    },
-    {
-        src: getImagePath('40'),
-        featured: true,
-    },
-    {
-        src: getImagePath('61'),
-    },
-    {
-        src: getImagePath('71'),
-    },
-    {
-        src: getImagePath('82'),
-    },
-    {
-        src: getImagePath('85'),
-    },
-    {
-        src: getImagePath('91'),
-    },
-    {
-        src: getImagePath('94'),
-    },
-    {
-        src: getImagePath('95'),
-    },
-    {
-        src: getImagePath('103'),
-    },
-    {
-        src: getImagePath('110'),
-    },
-    {
-        src: getImagePath('120'),
-    },
-    {
-        src: getImagePath('177'),
-    },
-    {
-        src: getImagePath('179'),
-    },
-    {
-        src: getImagePath('181'),
-    },
-    {
-        src: getImagePath('186'),
-    },
-    {
-        src: getImagePath('205'),
-    },
-    {
-        src: getImagePath('247'),
-    },
-    {
-        src: getImagePath('257'),
-    },
-    {
-        src: getImagePath('305'),
-    },
-    {
-        src: getImagePath('320'),
-    },
-    {
-        src: getImagePath('321'),
-    },
-];
